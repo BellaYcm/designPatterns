@@ -10,7 +10,9 @@
     class Customer extends Eloquent
     {
 
-        protected  $fillable=['type'];
+        //  protected  $fillable=['type','name']; #白名单
+        protected $guarded = ['id']; #黑名单  用来阻止批量赋值
+
         public function type()
         {
             return $this->type;

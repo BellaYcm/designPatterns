@@ -1,5 +1,6 @@
 <?php
- use Illuminate\Database\Capsule\Manager as Database;
+    use Illuminate\Database\Capsule\Manager as Database;
+
     /**
      * Created by PhpStorm.
      * User: sunke
@@ -13,11 +14,11 @@
 
         public function setUp()
         {
-            $database= new Database;
+            $database = new Database;
             $database->addConnection([
                 'driver'    => 'mysql',
                 'host'      => '127.0.0.1',
-                'database'  => 'database',
+                'database'  => 'minisite_lshc',
                 'username'  => 'root',
                 'password'  => '',
                 'charset'   => 'utf8',
@@ -30,7 +31,7 @@
         }
 
 
-        /** @test **/
+        /** @test * */
         function fetches_all_b()
         {
             $results = $this->customers->all();
@@ -38,10 +39,10 @@
         }
 
 
-        /** @test **/
+        /** @test * */
         function fetches_all()
         {
-            $result=$this->customers->bySpecification(new CustomerIsGold);
-            $this->assertCount(1,$result);
+            $result = $this->customers->bySpecification(new CustomerIsGold);
+            $this->assertCount(1, $result);
         }
     }

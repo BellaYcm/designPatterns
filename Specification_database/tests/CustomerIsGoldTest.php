@@ -14,7 +14,8 @@
         {
             $specification = new  CustomerIsGold;
             $goldCustomer = new Customer(['type' => 'gold']);
-            $sliverCustomer = new Customer(['type' => "sliver"]);
+            $test = new Customer(['name1' => 'jane']);
+            $sliverCustomer = new Customer(['type' => "sliver123"]);
             $this->assertTrue($specification->isSatisfiedBy($goldCustomer));
             $this->assertFalse($specification->isSatisfiedBy($sliverCustomer));
         }
