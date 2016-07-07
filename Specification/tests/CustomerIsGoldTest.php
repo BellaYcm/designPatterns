@@ -9,7 +9,7 @@
     class CustomerIsGoldTest extends PHPUnit_Framework_TestCase
     {
 
-        /** @test **/
+        /** @test * */
         function is_gold()
         {
             $specification = new  CustomerIsGold;
